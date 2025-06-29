@@ -24,7 +24,8 @@ const App: React.FC = () => {
 
   // WebSocket setup
   useEffect(() => {
-    const ws = new WebSocket(`ws://${window.location.host}`); // Connect to backend WebSocket on the same host and port
+    const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+    const ws = new WebSocket(`${protocol}//${window.location.host}`); // Connect to backend WebSocket on the same host and port
 
     ws.onopen = () => {
       console.log('WebSocket connected');
