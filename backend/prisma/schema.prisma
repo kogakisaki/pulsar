@@ -1,0 +1,38 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Download {
+  id            String   @id @default(cuid())
+  url           String
+  title         String
+  thumbnail     String?
+  status        String   @default("PENDING") // PENDING, DOWNLOADING, COMPLETED, ERROR, CANCELLED
+  progress      Int      @default(0)
+  format        String
+  filePath      String?
+  errorMessage  String?
+  createdAt     DateTime @default(now())
+}
+
+model ArgumentTemplate {
+  id   String @id @default(cuid())
+  name String @unique
+  args String
+}
+
+model Setting {
+  key   String @id
+  value String
+}

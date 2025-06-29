@@ -1,0 +1,6 @@
+{
+  "name": "Pulsar",
+  "description": "Pulsar: A modern, feature-rich web user interface for interacting with yt-dlp. It allows users to manage downloads, select formats, view progress, and handle queues in a clean, intuitive interface with dark and light modes.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
