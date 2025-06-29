@@ -13,6 +13,7 @@ jspm_packages/
 # TypeScript build directories
 dist/
 build/
+public/
 *.tsbuildinfo
 
 # Environment variables
