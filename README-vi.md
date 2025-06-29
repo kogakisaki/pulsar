@@ -1,5 +1,7 @@
 # ✨ Pulsar - Trình Tải Xuống Media Tối Ưu Của Bạn ✨
 
+[English](README.md) | Tiếng Việt
+
 Pulsar là một ứng dụng tải xuống media đẹp mắt, mạnh mẽ và thân thiện với người dùng, được thiết kế để giúp bạn dễ dàng tải xuống video và âm thanh từ các trang web yêu thích! Được xây dựng với giao diện người dùng frontend hiện đại bằng React và backend mạnh mẽ bằng Node.js, Express, TypeScript và Prisma, Pulsar tận dụng công cụ `yt-dlp` đáng kinh ngạc để mang đến cho bạn trải nghiệm tải xuống liền mạch.
 
 ## 🚀 Các Tính Năng Nổi Bật

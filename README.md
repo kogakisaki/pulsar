@@ -1,5 +1,7 @@
 # ✨ Pulsar - Your Ultimate Media Downloader ✨
 
+English | [Tiếng Việt](README-vi.md)
+
 Pulsar is a sleek, powerful, and user-friendly application designed to make downloading videos and audio from your favorite websites a breeze! Built with a modern React frontend and a robust Node.js backend, Pulsar leverages the incredible `yt-dlp` tool to bring you a seamless downloading experience.
 
 ## 🚀 Features at a Glance
@@ -34,6 +36,8 @@ pulsar/
 ├── README.md               # You are here! Project overview.
 └── README-vi.md            # Vietnamese version of this README.
 ```
+
+[Tiếng Việt](README-vi.md)
 
 ## 🛠️ System Requirements
 
