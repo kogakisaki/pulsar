@@ -160,7 +160,7 @@ const DownloadForm: React.FC<DownloadFormProps> = ({
       {error && (
         <div className="flex items-center gap-2 p-3 text-sm text-red-700 bg-red-50 dark:text-red-300 dark:bg-red-900/50 rounded-md animate-fade-in">
           <AlertTriangleIcon className="w-5 h-5 flex-shrink-0" />
-          <span>{error}</span>
+          <span className="break-words">{error}</span>
         </div>
       )}
 
