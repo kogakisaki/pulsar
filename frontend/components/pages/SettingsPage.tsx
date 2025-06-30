@@ -21,7 +21,7 @@ const SettingsPage: React.FC = () => {
     const fetchTemplates = async () => {
       console.log('Attempting to fetch templates...'); // Added log
       try {
-        const response = await fetch('http://localhost:4000/api/settings/templates'); // Changed to absolute URL
+        const response = await fetch('/api/settings/templates'); // Changed to absolute URL
         if (response.ok) {
           const data = await response.json();
           setTemplates(data);
@@ -37,7 +37,7 @@ const SettingsPage: React.FC = () => {
 
     const fetchCookieStatus = async () => {
       try {
-        const response = await fetch('http://localhost:4000/api/settings/cookies'); // Changed to absolute URL
+        const response = await fetch('/api/settings/cookies'); // Changed to absolute URL
         if (response.ok) {
           const data = await response.json();
           setCookiesContent(data.hasCookies ? 'Cookies loaded' : ''); // Assuming backend returns { hasCookies: boolean }
@@ -86,13 +86,13 @@ const SettingsPage: React.FC = () => {
     try {
       let response;
       if (editingTemplate) {
-        response = await fetch(`http://localhost:4000/api/settings/templates/${editingTemplate.id}`, { // Changed to absolute URL
+        response = await fetch(`/api/settings/templates/${editingTemplate.id}`, { // Changed to absolute URL
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ name: templateName, args: templateArgs }),
         });
       } else {
-        response = await fetch('http://localhost:4000/api/settings/templates', { // Changed to absolute URL
+        response = await fetch('/api/settings/templates', { // Changed to absolute URL
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ name: templateName, args: templateArgs }),
@@ -129,7 +129,7 @@ const SettingsPage: React.FC = () => {
   const handleDeleteTemplate = async (id: string) => {
     if (window.confirm("Are you sure you want to delete this template?")) {
       try {
-        const response = await fetch(`http://localhost:4000/api/settings/templates/${id}`, { // Changed to absolute URL
+        const response = await fetch(`/api/settings/templates/${id}`, { // Changed to absolute URL
           method: 'DELETE',
         });
 
@@ -158,7 +158,7 @@ const SettingsPage: React.FC = () => {
     formData.append('cookieFile', file);
 
     try {
-      const response = await fetch('http://localhost:4000/api/settings/cookies', { // Changed to absolute URL
+      const response = await fetch('/api/settings/cookies', { // Changed to absolute URL
         method: 'POST',
         body: formData,
       });
@@ -183,7 +183,7 @@ const SettingsPage: React.FC = () => {
   const handleClearCookies = async () => {
      if (window.confirm("Are you sure you want to clear the imported cookies?")) {
         try {
-          const response = await fetch('http://localhost:4000/api/settings/cookies', { // Changed to absolute URL
+          const response = await fetch('/api/settings/cookies', { // Changed to absolute URL
             method: 'DELETE',
           });
 
